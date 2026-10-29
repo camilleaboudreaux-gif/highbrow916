@@ -1,0 +1,184 @@
+/* Palette (2026-10-23, Camille): measured from her "Léopard + Green" mood board: white, Lily Green, Cardamom Seed,
+   leopard cream, tan and black. --cream is the leopard cream lightened so text on it stays readable. */
+:root{--bg:#FFFFFF;--cream:#ECE9E2;--tan:#917C68;--sand:#BDAD99;--line:#D5CFBF;--lily:#C8D09F;--olive:#74733C;--olive-deep:#57562D;--ink:#211C15;
+--serif:'Alegreya',Georgia,serif;
+--section:clamp(72px,9vw,136px);
+--radius-img:10px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--lily);color:var(--ink)}
+img{max-width:100%;display:block}
+a{color:var(--olive-deep);text-decoration-color:var(--sand);text-decoration-thickness:1px;text-underline-offset:.24em}
+a:hover{color:var(--olive-deep);text-decoration-color:var(--tan)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
+/* Editorial type (fonts 2026-10-23, Camille: match the studio sign): large Alegreya headlines, one italic phrase per headline (<em>) in leopard tan. */
+h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--olive-deep);margin:0;line-height:1.02;letter-spacing:-.005em;text-wrap:balance}
+h1{font-size:clamp(48px,7.4vw,90px);line-height:.98}
+h2{font-size:clamp(42px,5vw,68px)}
+h3{font-size:28px;font-weight:400;letter-spacing:0}
+h1 em,h2 em,h3 em{font-style:italic;font-weight:400;color:var(--tan)}
+p{margin:0;text-wrap:pretty}
+.nw{white-space:nowrap}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+/* Small uppercase labels with a tiny leopard bar lead-in. */
+.kicker{display:flex;align-items:center;gap:14px;font-size:12px;font-weight:500;color:var(--olive-deep);letter-spacing:.2em;text-transform:uppercase;text-wrap:balance}
+.kicker::before{content:"";flex:none;width:54px;height:11px;border-radius:6px;background:url(images/leopard.svg) 0 0/110px}
+/* Buttons: solid olive with white text, small uppercase label. */
+.btn{display:inline-block;background:var(--olive);color:#fff;border:1px solid var(--olive);text-decoration:none;padding:17px 36px;border-radius:2px;font-size:12.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;line-height:1.2;text-align:center;transition:background-color .25s ease,border-color .25s ease}
+.btn:hover{color:#fff;background:var(--olive-deep);border-color:var(--olive-deep)}
+.btn.line{background:transparent;color:var(--olive-deep);border-color:var(--olive)}
+.btn.line:hover{background:var(--cream);color:var(--olive-deep)}
+.more,.actions a:not(.btn),.head > a,.head .small a,.row2 a{font-size:15px;text-underline-offset:.35em}
+/* Header */
+.top{border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:20}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+/* Logo: the "HighBrow" lettering traced from the studio's window sign (images/highbrow-logo.svg), drawn in olive.
+   The link keeps its text for screen readers; font-size:0 hides it visually. */
+.logo{display:block;width:128px;aspect-ratio:1641/826;font-size:0;color:var(--olive);text-decoration:none}
+.logo::before{content:"";display:block;height:100%;background:currentColor;-webkit-mask:url(images/highbrow-logo.svg) center/contain no-repeat;mask:url(images/highbrow-logo.svg) center/contain no-repeat}
+.logo:hover{color:var(--olive)}
+.nav{display:flex;align-items:center;gap:34px;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase}
+.nav a{text-decoration:none;padding:4px 0}
+.nav a:hover{text-decoration:underline;text-decoration-color:var(--tan)}
+.nav a.btn{padding:12px 22px;font-size:11.5px;color:#fff}
+.nav a.btn:hover{text-decoration:none}
+.nav a[aria-current="page"]{border-bottom:1px solid var(--tan)}
+.menu{display:none}
+/* Hero: copy beside an inset photo, inside the page width. */
+.hero{max-width:1200px;margin:0 auto;padding:clamp(40px,5vw,72px) 24px var(--section);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,5vw,80px);align-items:center}
+.hero .copy{display:flex;flex-direction:column;justify-content:center;gap:28px}
+.hero .copy p.lead{font-size:18px;max-width:470px}
+.hero img{width:100%;aspect-ratio:4/5;max-height:720px;object-fit:cover;border-radius:var(--radius-img)}
+.hero-photo{gap:14px}
+/* Leopard accent (Kristin loves animal print): a leopard panel peeks out behind the homepage photo. */
+.hero-photo .frame{position:relative;display:block;isolation:isolate}
+.hero-photo .frame::before{content:"";position:absolute;inset:-22px -22px 22px 22px;background:url(images/leopard.svg) 0 0/240px;border-radius:var(--radius-img);z-index:-1}
+.hero-photo figcaption{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--olive-deep)}
+.hero .note{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.4;color:var(--olive-deep)}
+.actions{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.page-hero{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);padding-bottom:clamp(56px,7vw,104px)}
+.page-hero img{aspect-ratio:4/3;max-height:none}
+.page-hero h1{font-size:clamp(50px,6.2vw,88px)}
+.page-hero .copy p.lead{max-width:none}
+.page-hero img[src*="hero_monstera"]{object-position:50% 0}
+.page-hero img[src*="studio_cabinet"]{object-position:50% 0}
+/* Promise: a Lily Green band with three italic lines. */
+/* Thin leopard ribbons as dividers: top of the promise strip and top of the footer. */
+.promise,footer{position:relative}
+.promise::before,footer::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:url(images/leopard.svg) 0 0/150px}
+.promise{background:var(--lily);padding-top:14px}
+.promise .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding-top:44px;padding-bottom:44px;text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(25px,2.4vw,31px);line-height:1.25;color:var(--ink)}
+.promise p{padding:0 24px}
+.promise p+p{border-left:1px solid rgba(33,28,21,.2)}
+section.block{padding:var(--section) 0}
+/* Alternate sections sit on cream. */
+section.tone{background:var(--cream)}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(36px,4vw,56px);flex-wrap:wrap}
+.head > div{display:flex;flex-direction:column;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,40px)}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,7vw,104px);align-items:center}
+figure{margin:0;display:flex;flex-direction:column;gap:14px}
+figure img{width:100%;aspect-ratio:9/7;object-fit:cover;border-radius:var(--radius-img)}
+figcaption{font-size:11.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--olive-deep)}
+.card{background:var(--cream);border-radius:2px;padding:26px 28px;display:flex;flex-direction:column;gap:8px}
+.card.feature{box-shadow:inset 0 0 0 1px var(--tan)}
+.card .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.price{color:var(--ink);font-size:16px;font-weight:500;white-space:nowrap}
+.card p{font-size:15px}
+.card .time{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--olive-deep)}
+.small{font-size:15px}
+/* Price menu: hairline rows, serif names and prices, like a salon menu. */
+.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(40px,6vw,96px);border-bottom:1px solid var(--sand)}
+.svc .card{background:none;border-radius:0;box-shadow:none;padding:26px 0 28px;border-top:1px solid var(--sand);gap:6px}
+.svc .card .row h3{font-size:clamp(27px,2.4vw,33px)}
+.svc .price{font-family:var(--serif);font-size:clamp(25px,2.2vw,30px);font-weight:400}
+.svc .card p{font-size:15px;max-width:440px}
+.group{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);gap:clamp(24px,5vw,80px);align-items:start;margin-bottom:clamp(56px,7vw,96px)}
+.group h2{font-size:clamp(40px,4.2vw,58px);padding-top:16px}
+.group .svc{grid-template-columns:minmax(0,1fr)}
+@media (min-width:861px){.group ~ .small,.group ~ .actions{margin-left:calc((100% - clamp(24px,5vw,80px)) / 3.2 + clamp(24px,5vw,80px))}}
+/* Reviews: the first quote is a large centered pull quote, the rest sit below it. */
+blockquote{margin:0;display:flex;flex-direction:column;gap:16px}
+blockquote::before{content:"";width:64px;height:11px;border-radius:6px;background:url(images/leopard.svg) 0 0/110px;margin-bottom:6px}
+blockquote p{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.35;color:var(--olive-deep)}
+cite{font-style:normal;font-size:11.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--olive-deep)}
+.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(48px,6vw,80px) clamp(40px,6vw,88px);align-items:start}
+.quotes.q3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.quotes blockquote:first-child{grid-column:1/-1;align-items:center;text-align:center;max-width:960px;margin:0 auto clamp(8px,2vw,24px)}
+.quotes blockquote:first-child p{font-size:clamp(32px,4vw,52px);line-height:1.18}
+.photo{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius-img)}
+.wide{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-img)}
+/* About: wider text column so her set line breaks fit (see about.html) */
+.about-split{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+.about-split p{max-width:540px}
+.pillars{counter-reset:pillar}
+.pillars .card{background:none;border-radius:0;padding:26px 0 0;border-top:1px solid var(--sand);gap:12px;counter-increment:pillar}
+.pillars .card::before{content:counter(pillar,decimal-leading-zero);font-family:var(--serif);font-style:italic;font-size:26px;color:var(--tan)}
+.pillars .card h3{font-size:32px}
+.gallery{align-items:start}
+.gallery img:nth-child(2){margin-top:72px}
+/* Booking and closing bands: Lily Green, centered, generous space. */
+.book,.cta{background:var(--lily);color:var(--ink)}
+.book h2 em,.cta h2 em{color:inherit}
+.book a:not(.btn),.cta a:not(.btn){color:var(--ink);text-decoration-color:var(--ink)}
+.book{padding:var(--section) 0;text-align:center}
+.book .wrap{display:flex;flex-direction:column;align-items:center}
+.book .card{background:none;padding:0;align-items:center;gap:6px}
+.book .card .btn{margin-top:26px}
+.book .card h3{font-size:32px}
+.book .row2{display:flex;justify-content:center;align-items:center;margin-top:30px;font-size:15px;flex-wrap:wrap;gap:10px 28px}
+.cta{text-align:center;padding:var(--section) 24px;display:flex;flex-direction:column;align-items:center;gap:22px}
+.cta .actions{margin-top:10px;justify-content:center}
+.faq{border-top:1px solid var(--sand);padding:26px 0;display:grid;grid-template-columns:380px minmax(0,1fr);gap:32px}
+.faq:last-child{border-bottom:1px solid var(--sand)}
+.faq h3{font-size:28px}
+.map{width:100%;aspect-ratio:4/3;border:0;border-radius:var(--radius-img)}
+footer{background:var(--cream);padding:72px 0 64px}
+footer .wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;font-size:14px}
+footer .logo{width:168px;margin-bottom:14px}
+footer nav{display:flex;gap:26px;flex-wrap:wrap;font-size:11.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase}
+footer nav a{text-decoration:none}
+footer nav a:hover{text-decoration:underline;text-decoration-color:var(--tan)}
+.mbar{display:none}
+@media (min-width:980px){.one-line{white-space:nowrap;font-size:min(18px,1.75vw)}}
+/* Smallest phones (320px): keep glued headline and pull-quote endings inside the screen. */
+@media (max-width:359px){h1{font-size:41px}.page-hero h1{font-size:44px}.quotes blockquote:first-child p{font-size:28px}}
+@media (max-width:979px){br.dk{display:none}}
+@media (max-width:860px){
+ body{font-size:17px}
+ :root{--radius-img:8px}
+ .nav{display:none}
+ .menu{display:block;position:relative}
+ .menu summary{list-style:none;cursor:pointer;font-weight:500;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:8px 0;color:var(--olive-deep)}
+ .menu summary::-webkit-details-marker{display:none}
+ .menu .panel{position:absolute;right:0;top:44px;background:var(--bg);border:1px solid var(--line);border-radius:2px;padding:16px 22px;display:flex;flex-direction:column;gap:14px;min-width:200px;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;box-shadow:0 14px 30px -18px rgba(33,28,21,.35)}
+ .menu .panel a{text-decoration:none}
+ .top .wrap{height:66px}
+ .logo{width:100px}
+ .hero,.page-hero{grid-template-columns:minmax(0,1fr);padding-top:20px;padding-bottom:64px;gap:30px}
+ .hero > img,.hero-photo{order:-1}
+ .hero-photo figcaption{display:none}
+ .hero-photo .frame::before{inset:-14px -14px 14px 14px}
+ .hero img{aspect-ratio:1/1;object-position:50% 4%}
+ .page-hero img{aspect-ratio:4/3}
+ .hero .actions .btn{width:100%}
+ .promise .wrap{grid-template-columns:minmax(0,1fr);gap:14px;padding-top:32px;padding-bottom:32px}
+ .promise p+p{border-left:0}
+ .grid3,.grid2,.svc,.quotes,.quotes.q3,.group{grid-template-columns:minmax(0,1fr)}
+ .grid3,.grid2{gap:32px}
+ .group{gap:8px}
+ .group h2{padding-top:0}
+ .quotes blockquote:first-child{margin-bottom:0}
+ .gallery img:nth-child(2){margin-top:0}
+ .faq{grid-template-columns:minmax(0,1fr);gap:6px}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom));gap:12px;z-index:30}
+ .mbar a{flex:1}.mbar a.btn:last-child{flex:2}
+ .mbar .btn{padding:15px 12px}
+ footer{padding:56px 0 120px}
+ footer .logo{width:140px}
+}
+/* Scroll reveal (site.js): blocks fade up into place as they scroll into view. */
+html.js .reveal{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+html.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}html.js .reveal{opacity:1;transform:none;transition:none}}
