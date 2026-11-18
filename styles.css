@@ -61,7 +61,7 @@ p{margin:0;text-wrap:pretty}
 .page-hero img{aspect-ratio:4/3;max-height:none}
 .page-hero h1{font-size:clamp(50px,6.2vw,88px)}
 .page-hero .copy p.lead{max-width:none}
-.page-hero img[src*="hero_monstera"]{object-position:50% 0}
+.page-hero img[src*="hero_monstera"]{object-position:50% 15%}
 .page-hero img[src*="studio_cabinet"]{object-position:50% 0}
 /* Promise: a Lily Green band with three italic lines. */
 /* Thin leopard ribbons as dividers: top of the promise strip and top of the footer. */
@@ -161,6 +161,7 @@ footer nav a:hover{text-decoration:underline;text-decoration-color:var(--tan)}
  .hero-photo figcaption{display:none}
  .hero-photo .frame::before{inset:-14px -14px 14px 14px}
  .hero img{aspect-ratio:1/1;object-position:50% 4%}
+ .hero-photo img{object-position:50% 8%}
  .page-hero img{aspect-ratio:4/3}
  .hero .actions .btn{width:100%}
  .promise .wrap{grid-template-columns:minmax(0,1fr);gap:14px;padding-top:32px;padding-bottom:32px}
